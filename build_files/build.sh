@@ -12,6 +12,9 @@ cp -avf "/ctx/system_files"/. /
 # List of rpmfusion packages can be found here:
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/43/x86_64/repoview/index.html&protocol=https&redirect=1
 
+# Non-admin user setup
+useradd -m -s /bin/bash studente
+
 # Utility packages
 dnf5 install -y tmux nmap libreoffice
 
@@ -30,8 +33,8 @@ dnf5 install -y cinnamon \
                 xapps \
                 lightdm
 
-# Browser
-dnf5 install -y firefox
+# Browser and Terminal
+dnf5 install -y firefox gnome-console
 
 # Veyon configuration
 wget -O /tmp/veyon.rpm https://github.com/veyon/veyon/releases/download/v4.11.3/veyon-4.11.3.0-fedora.44.x86_64.rpm
