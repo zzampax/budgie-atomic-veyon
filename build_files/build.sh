@@ -12,9 +12,30 @@ cp -avf "/ctx/system_files"/. /
 # List of rpmfusion packages can be found here:
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/43/x86_64/repoview/index.html&protocol=https&redirect=1
 
-# this installs a package from fedora repos
+# Utility packages
+dnf5 install -y tmux nmap libreoffice
+
+# Cinnamon Desktop Environment + Correlated misc
+dnf5 install -y cinnamon \
+                cinnamon-session \
+                cinnamon-desktop \
+                cinnamon-control-center \
+                cinnamon-screensaver \
+                cinnamon-translations \
+                cinnamon-settings-daemon \
+                cinnamon-themes \
+                yaru-icon-theme \
+                nemo \
+                nemo-extensions \
+                xapps \
+                xapps-common \
+                lightdm
+
+# Browser
+dnf5 install -y firefox
+
+# Veyon configuration
 wget -O /tmp/veyon.rpm https://github.com/veyon/veyon/releases/download/v4.11.3/veyon-4.11.3.0-fedora.44.x86_64.rpm
-dnf5 install -y tmux libreoffice
 dnf5 reinstall -y procps-ng
 dnf5 install -y /tmp/veyon.rpm
 
