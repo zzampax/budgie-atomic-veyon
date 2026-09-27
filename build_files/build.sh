@@ -28,7 +28,6 @@ dnf5 install -y cinnamon \
                 nemo \
                 nemo-extensions \
                 xapps \
-                xapps-common \
                 lightdm
 
 # Browser
