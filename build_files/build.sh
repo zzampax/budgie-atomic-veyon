@@ -15,7 +15,7 @@ cp -avf "/ctx/system_files"/. /
 # this installs a package from fedora repos
 wget -O /tmp/veyon.rpm https://github.com/veyon/veyon/releases/download/v4.11.3/veyon-4.11.3.0-fedora.44.x86_64.rpm
 dnf5 install -y tmux libreoffice
-dnf5 install -y ./tmp/veyon.rpm
+dnf5 install -y /tmp/veyon.rpm
 
 # Use a COPR Example:
 #
