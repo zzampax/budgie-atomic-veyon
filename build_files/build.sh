@@ -12,10 +12,6 @@ cp -avf "/ctx/system_files"/. /
 # List of rpmfusion packages can be found here:
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/43/x86_64/repoview/index.html&protocol=https&redirect=1
 
-# Non-admin user setup
-useradd -m -s /bin/bash studente
-passwd -d studente
-
 # Utility packages
 dnf5 install -y tmux nmap libreoffice
 
