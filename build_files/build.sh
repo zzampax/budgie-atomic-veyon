@@ -14,6 +14,7 @@ cp -avf "/ctx/system_files"/. /
 
 # Non-admin user setup
 useradd -m -s /bin/bash studente
+passwd -d studente
 
 # Utility packages
 dnf5 install -y tmux nmap libreoffice
@@ -31,7 +32,12 @@ dnf5 install -y cinnamon \
                 nemo \
                 nemo-extensions \
                 xapps \
-                lightdm
+                lightdm \
+
+# Create lightdm data directory with proper permissions
+RUN mkdir -p /var/lib/lightdm-data && \
+    chown -R lightdm:lightdm /var/lib/lightdm-data && \
+    chmod 0700 /var/lib/lightdm-data
 
 # Browser and Terminal
 dnf5 install -y firefox gnome-console
